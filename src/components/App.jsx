@@ -7,17 +7,19 @@ class App extends Component {
     constructor() {
         super();
         this.state = {
-            islogggedin: false
+            islogggedin: false,
+            sessionid: "",
+            roleid: 0
         };
     }
 
 
     render() {
         if (this.state.islogggedin) {
-                return <body><Dashboard/></body>;
+                return <body><Dashboard sessionid={this.state.sessionid}  roleid = {this.state.roleid}/></body>;
        
         } else {
-            return <body><Login/></body>;
+            return <body><Login sessionid={this.state.sessionid}  roleid = {this.state.roleid} /></body>;
         }
     }
 
